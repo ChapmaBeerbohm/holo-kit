@@ -2,7 +2,7 @@
 source: fuel-client/src/client/schema/block.rs
 expression: operation.query
 ---
-query($id: BlockId!) {
+query($id: BlockId) {
   block(id: $id) {
     id
     header {
@@ -19,6 +19,12 @@ query($id: BlockId!) {
     }
     consensus {
       __typename
+      ... on Genesis {
+        chainConfigHash
+        coinsRoot
+        contractsRoot
+        messagesRoot
+      }
       ... on PoAConsensus {
         signature
       }
