@@ -147686,5 +147686,6 @@
       "amount": 1126914900
     }
   ],
-  "block_height": 0
+  "block_height": 0,
+  "da_block_height": 0
 }
